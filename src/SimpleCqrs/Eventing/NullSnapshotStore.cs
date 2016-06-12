@@ -3,6 +3,9 @@ using SimpleCqrs.Domain;
 
 namespace SimpleCqrs.Eventing
 {
+    /// <summary>
+    /// Neuer Kommentar
+    /// </summary>
     public class NullSnapshotStore : ISnapshotStore
     {
         public Snapshot GetSnapshot(Guid aggregateRootId)

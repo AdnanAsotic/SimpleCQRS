@@ -1,10 +1,19 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using SimpleCqrs.Eventing;
 using SimpleCQRSDemo.Events;
 using SimpleCQRSDemo.FakeDb;
 
 namespace SimpleCQRSDemo.Denormalizers
 {
+    public class AccountEvents : IHandleDomainEvents<AccountCreatedEvent>
+    {
+        public void Handle(AccountCreatedEvent domainEvent)
+        {
+            
+        }
+    }
+
     public class AccountReportDenormalizer : IHandleDomainEvents<AccountCreatedEvent>,
                                              IHandleDomainEvents<AccountNameSetEvent>
     {

@@ -12,7 +12,7 @@ namespace SimpleCQRSDemo
         static void Main(string[] args)
         {
 
-            var runtime = new SampleRunTime();
+            var runtime = SampleRunTime.Instance;
 
             runtime.Start();
 
@@ -20,7 +20,7 @@ namespace SimpleCQRSDemo
             var fakeAccountTable = new FakeAccountTable();
             runtime.ServiceLocator.Register(fakeAccountTable); // Create Fake-db
             runtime.ServiceLocator.Register(new AccountReportReadService(fakeAccountTable));
-            var commandBus = runtime.ServiceLocator.Resolve<ICommandBus>();
+            var commandBus = runtime.CommandBus;
 
 
             // Create and send a couple of command
