@@ -27,9 +27,11 @@ namespace SimpleCQRSDemo
             var cmdMarcus = new CreateAccountCommand { FirstName = "Marcus", LastName = "Hammarberg" };
             var cmdDarren = new CreateAccountCommand { FirstName = "Darren", LastName = "Cauthon" };
             var cmdTyrone = new CreateAccountCommand { FirstName = "Tyrone", LastName = "Groves" };
+            var cmdAdnan = new CreateAccountCommand { FirstName = "Adnan", LastName = "Asotic" };
             commandBus.Send(cmdMarcus);
             commandBus.Send(cmdDarren);
             commandBus.Send(cmdTyrone);
+            commandBus.Send(cmdAdnan);
 
             // Get the denormalized version of the data back from the read model
             var accountReportReadModel = runtime.ServiceLocator.Resolve<AccountReportReadService>();
